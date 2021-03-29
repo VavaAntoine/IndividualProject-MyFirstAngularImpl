@@ -1,0 +1,27 @@
+<h4 class="mt-3">Attribute List</h4>
+<hr>
+<div class="d-flex justify-content-end">
+  <a routerLink="/addAttr" routerLinkActive="active" class="pull-right btn btn-secondary" role="button" aria-disabled="true">Add Attribute</a>
+</div>
+<br>
+<table class="table table table-striped table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Attribute Name</th>
+      <th scope="col">Attribute Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tempAttribute of attributes | async">
+      <td class="align-middle"> 
+
+        <a [routerLink]="['/updateAttr', tempAttribute.attrId]" 
+        routerLinkActive="active"> 
+        {{ tempAttribute.attrName }} </a> 
+      
+      </td>
+      <td >{{ tempAttribute.attrValue }}</td>
+    </tr>
+  </tbody>
+</table>
+

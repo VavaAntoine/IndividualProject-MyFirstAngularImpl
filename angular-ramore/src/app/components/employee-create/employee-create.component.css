@@ -1,0 +1,12 @@
+.match-parent {
+  width: 100%;
+  height: 200px;
+}
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.invalid-input-msg {
+  color: darkred;
+}

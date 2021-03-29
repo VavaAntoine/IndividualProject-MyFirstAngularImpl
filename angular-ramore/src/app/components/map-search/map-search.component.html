@@ -1,0 +1,68 @@
+<h4 class="pt-3">Search Employee By Attribute</h4>
+<hr />
+<br />
+
+<div class="row">
+    <div class="col-3 border border-secondary">
+        <section class="mb-4">
+            <h6 class="font-weight-bold mb-3">Attribute</h6>
+
+            <div class="form-check pl-0 mb-3" *ngFor="let tempAttribute of attributes | async">
+                <input type="radio" class="form-check-input" id="{{ tempAttribute.attrId }}" name="attributeRadios"
+                    (change)="onAttributeChange($event)" />
+                <label class="form-check-label small text-uppercase card-link-secondary"
+                    for="{{ tempAttribute.attrId }}">
+                    {{ tempAttribute.attrName }} {{ tempAttribute.attrValue }}</label>
+            </div>
+        </section>
+    </div>
+    <div class="col-9">
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-secondary" [disabled]="!isValid" (click)="onClick()">
+                Continue
+            </button>
+        </div>
+        <div class="d-flex justify-content-end invalid-input-msg" *ngIf="!isValid">
+            <p>Please respect required fields to enable Continue buton.</p>
+        </div>
+
+        <br />
+
+        <div>
+            <table class="table table-striped table-light">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                        <th>Has Car</th>
+                        <th>Address</th>
+                        <th>Attributes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees | async">
+                        <td>
+                            <input type="radio" class="form-check-input" id="{{ employee.empId }}" name="employeeRadios"
+                                (change)="onEmployeeChange($event)" />
+                            <label class="form-check-label small text-uppercase card-link-secondary"
+                                for="{{ employee.empId }}">
+                            </label>
+                        </td>
+                        <td>{{ employee.empName }}</td>
+                        <td>{{ employee.empDateOfBirth }}</td>
+                        <td>{{ employee.empHasCar }}</td>
+                        <td>{{ employee.empAddress }}</td>
+                        <td>
+                            <ul class="list-group">
+                                <li *ngFor="let attr of employee.attributeList">
+                                    {{ attr.attrName }} {{ attr.attrValue }}
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
