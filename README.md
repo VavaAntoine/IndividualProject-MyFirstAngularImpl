@@ -10,4 +10,4 @@ Attributes, Employees screens will provide  the list of existing records and an 
 5. All data recovery and actions should be done through appropriate web API calls. The Web API can implement Spring Boot technology and the appropriate IoC and Dependency Injection techniques should be used appropriately. JPA can be used for Data Access. 
 6. The application should demonstrate the use of AJAX calls.
 
-**Implemented technologies**: Spring Boot, JPA, Hibernate, MySQL, REST API, **TypeScript**, JavaScript, HTML, CSS, Bootstrap, **Angular** 
+**Implemented technologies**: Spring Boot, JPA, Hibernate, MySQL, REST API, **TypeScript**, HTML, CSS, Bootstrap, **Angular** 
